@@ -1,5 +1,5 @@
 {
-  "name": "paginatorjs",
+  "name": "@seoly/paginator",
   "version": "1.0.0",
   "description": "javascript paginator",
   "main": "dist/index.js",
