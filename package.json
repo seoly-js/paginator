@@ -1,0 +1,20 @@
+{
+  "name": "paginatorjs",
+  "version": "1.0.0",
+  "description": "javascript paginator",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "author": "seoly0",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "declaration": true,
+    "sourceMap": true,
+    "target": "ESNext",
+    "outDir": "dist",
+    "baseUrl": ".",
+  },
+  "include": [
+    "src/**/*"
+  ],
+  // "types": ["./src/types.d.ts"]
+}
