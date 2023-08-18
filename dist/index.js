@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Paginator = void 0;
 class Paginator {
     constructor(current, pages, options) {
         this.state = {
@@ -84,5 +87,5 @@ class Paginator {
         this.validateState();
     }
 }
-export { Paginator };
+exports.Paginator = Paginator;
 //# sourceMappingURL=index.js.map

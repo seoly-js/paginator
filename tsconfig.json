@@ -6,6 +6,7 @@
     "declaration": true,
     "sourceMap": true,
     "target": "ESNext",
+    "module": "CommonJS",
     "outDir": "dist",
     "baseUrl": ".",
   },
