@@ -1,6 +1,6 @@
 {
   "name": "@seoly/paginator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "javascript paginator",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean",
+    "test": "node test/index.js"
   },
   "author": "seoly0",
   "license": "MIT",

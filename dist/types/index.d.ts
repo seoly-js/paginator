@@ -1,6 +1,6 @@
 export interface State {
     current: number;
-    pages: number;
+    total: number;
     isFirst: boolean;
     isLast: boolean;
     hasPrev: boolean;
