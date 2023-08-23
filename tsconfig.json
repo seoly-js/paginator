@@ -4,7 +4,7 @@
     "noEmitOnError": true,
     "removeComments": false,
     "declaration": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "target": "ESNext",
     "module": "CommonJS",
     "outDir": "dist",

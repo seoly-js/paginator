@@ -108,4 +108,3 @@ class Paginator {
     }
 }
 exports.Paginator = Paginator;
-//# sourceMappingURL=index.js.map
