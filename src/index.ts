@@ -1,12 +1,7 @@
 import type { State, Options, OptionsParameter, Items } from './types'
 
 class Paginator {
-
-  constructor(
-    current: number,
-    total: number,
-    options?: OptionsParameter,
-  ) {
+  constructor(current: number, total: number, options?: OptionsParameter) {
     this.state = {
       current,
       total,
@@ -17,7 +12,7 @@ class Paginator {
     }
     this.options = {
       windowSize: options?.windowSize ?? 5,
-      windowMode: options?.windowMode ?? "SLIDING"
+      windowMode: options?.windowMode ?? 'SLIDING',
     }
     this.validateState()
   }
@@ -26,10 +21,10 @@ class Paginator {
   private options: Options
 
   private validateState() {
-    if (typeof this.state.current != "number") throw TypeError
-    if (typeof this.state.total != "number") throw TypeError
-    if (typeof this.options.windowSize != "number") throw TypeError
-    if (this.options.windowMode != "SLIDING" && this.options.windowMode != "JUMPING") throw TypeError
+    if (typeof this.state.current != 'number') throw TypeError
+    if (typeof this.state.total != 'number') throw TypeError
+    if (typeof this.options.windowSize != 'number') throw TypeError
+    if (this.options.windowMode != 'SLIDING' && this.options.windowMode != 'JUMPING') throw TypeError
   }
 
   private updateState() {
@@ -46,22 +41,16 @@ class Paginator {
     const ret: Items = []
     let left = 0
     let right = 0
-    if (this.options.windowMode === "SLIDING") {
-      const halfSideSize = (this.options.windowSize - this.options.windowSize % 2) / 2
-      left = (
-        this.state.current - halfSideSize > 0 
-        ? this.state.current + halfSideSize > this.state.total && this.state.total > this.options.windowSize
-        ? this.state.total - this.options.windowSize + 1
-        : this.state.current - halfSideSize 
-        : 1
-      )
-      right = (
-        left + this.options.windowSize - 1 < this.state.total 
-        ? left + this.options.windowSize - 1 
-        : this.state.total
-      )  
-    }
-    else if (this.options.windowMode === "JUMPING") {
+    if (this.options.windowMode === 'SLIDING') {
+      const halfSideSize = (this.options.windowSize - (this.options.windowSize % 2)) / 2
+      left =
+        this.state.current - halfSideSize > 0
+          ? this.state.current + halfSideSize > this.state.total && this.state.total > this.options.windowSize
+            ? this.state.total - this.options.windowSize + 1
+            : this.state.current - halfSideSize
+          : 1
+      right = left + this.options.windowSize - 1 < this.state.total ? left + this.options.windowSize - 1 : this.state.total
+    } else if (this.options.windowMode === 'JUMPING') {
       const currentWindow = Math.floor((this.state.current - 1) / this.options.windowSize)
       left = currentWindow * this.options.windowSize + 1
       right = Math.min((currentWindow + 1) * this.options.windowSize, this.state.total)
@@ -78,7 +67,7 @@ class Paginator {
     return this.state.current
   }
 
-  setCurrent (page: number) {
+  setCurrent(page: number) {
     this.state.current = page
     this.validateState()
     this.updateState()

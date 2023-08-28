@@ -1,10 +1,10 @@
 export interface State {
   current: number
   total: number
-  isFirst: boolean,
-  isLast: boolean,
-  hasPrev: boolean,
-  hasNext: boolean,
+  isFirst: boolean
+  isLast: boolean
+  hasPrev: boolean
+  hasNext: boolean
 }
 
 export interface OptionsParameter {
@@ -18,4 +18,4 @@ export interface Options {
 }
 
 export type Items = Array<number>
-export type WindowMode = "SLIDING" | "JUMPING"
+export type WindowMode = 'SLIDING' | 'JUMPING'
